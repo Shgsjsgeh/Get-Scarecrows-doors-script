@@ -107,7 +107,7 @@ tab:AddButton({
 	Callback = function()
       		print("button pressed")
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Shgsjsgeh/Get-Scarecrows-doors-script/refs/heads/main/Star%20jug%20by%20upio.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/Scripts/refs/heads/main/StarJug.lua"))()
   	end    
 })
 local Tab = Window:MakeTab({
