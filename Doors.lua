@@ -102,3 +102,24 @@ Tab:AddButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/Scripts/main/rocketLauncher.lua"))()
 end    
 })
+local Tab = Window:MakeTab({
+	Name = "Anti stuff",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "Anti figure hearing",
+	Callback = function()
+      		print("button pressed")
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Shgsjsgeh/Get-Scarecrows-doors-script/refs/heads/main/Anti%20figure%20hearing.lua"))()
+  	end    
+})
+player:AddButton({
+	Name = "Button!",
+	Callback = function()
+      		print("button pressed")
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Shgsjsgeh/Get-Scarecrows-doors-script/refs/heads/main/Star%20jug%20by%20upio.lua"))()
+  	end    
+})
