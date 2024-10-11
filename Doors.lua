@@ -51,62 +51,6 @@ for i,v in ipairs(workspace:GetDescendants()) do
     end
 end
 coroutine.resume(KeyCoroutine)
-local FigureChams = {}
-VisualsTab:AddToggle({
-	Name = "Figure Chams",
-	Default = false,
-    Flag = "FigureToggle",
-    Save = true,
-    Callback = function(Value)
-        for i,v in pairs(FigureChams) do
-            v.Enabled = Value
-        end
-    end
-})
-
-local function ApplyBookChams(inst)
-    if inst:IsDescendantOf(game:GetService("Workspace").CurrentRooms:FindFirstChild("50")) and game:GetService("ReplicatedStorage").GameData.LatestRoom.Value == 50 then
-        wait()
-        local Cham = Instance.new("Highlight")
-        Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-        Cham.FillColor = Color3.new(0, 1, 0.749019)
-        Cham.FillTransparency = 0.5
-        Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
-        Cham.Parent = game:GetService("CoreGui")
-        Cham.Enabled = OrionLib.Flags["BookToggle"].Value
-        Cham.Adornee = inst
-        Cham.RobloxLocked = true
-        return Cham
-    end
-end
-
-local function ApplyEntityChams(inst)
-    wait()
-    local Cham = Instance.new("Highlight")
-    Cham.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-    Cham.FillColor = Color3.new(1, 0, 0)
-    Cham.FillTransparency = 0.5
-    Cham.OutlineColor = Color3.new(0.792156, 0.792156, 0.792156)
-    Cham.Parent = game:GetService("CoreGui")
-    Cham.Enabled = OrionLib.Flags["FigureToggle"].Value
-    Cham.Adornee = inst
-    Cham.RobloxLocked = true
-    return Cham
-end
-
-local BookCoroutine = coroutine.create(function()
-    task.wait(1)
-    for i,v in pairs(game:GetService("Workspace").CurrentRooms["50"].Assets:GetDescendants()) do
-        if v.Name == "LiveHintBook" then
-            table.insert(BookChams,ApplyBookChams(v))
-        end
-    end
-end)
-local EntityCoroutine = coroutine.create(function()
-    local Entity = game:GetService("Workspace").CurrentRooms["50"].FigureSetup:WaitForChild("FigureRagdoll",5)
-    Entity:WaitForChild("Torso",2.5)
-    table.insert(FigureChams,ApplyEntityChams(Entity))
-end)
 local Tab = Window:MakeTab({
 	Name = "player",
 	Icon = "rbxassetid://4483345998",
