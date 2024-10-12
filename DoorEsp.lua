@@ -1,4 +1,3 @@
-while true do
 local door = workspace.CurrentRooms:FindFirstChild("0").Door
 
 if door then
@@ -39,4 +38,3 @@ if door then
     highlight.OutlineTransparency = 0
     highlight.Parent = door
 end
-wait()
