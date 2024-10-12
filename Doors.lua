@@ -121,4 +121,17 @@ Tab:AddButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Shgsjsgeh/Get-Scarecrows-doors-script/refs/heads/main/Anti%20figure%20hearing.lua"))()
   	end    
 })
+local Tab = Window:MakeTab({
+	Name = "Settings",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+Tab:AddButton({
+	Name = "keyBinds",
+	Callback = function()
+      		print("button pressed")
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Shgsjsgeh/Get-Scarecrows-doors-script/refs/heads/main/Keybind.lua"))()
+  	end    
+})
 OrionLib:Init()
