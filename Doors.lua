@@ -5,6 +5,12 @@ local VisualsTab = Window:MakeTab({
 	Icon = "nil",
 	PremiumOnly = false
 })
+OrionLib:MakeNotification({
+	Name = "StarJug",
+	Content = "the starJug has been set to your clipboard",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
 
 
 local CF = CFrame.new
@@ -101,14 +107,6 @@ Tab:AddButton({
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/Scripts/main/rocketLauncher.lua"))()
 end    
-})
-tab:AddButton({
-	Name = "StarJug",
-	Callback = function()
-      		print("button pressed")
-
-loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/Scripts/refs/heads/main/StarJug.lua"))()
-  	end    
 })
 local Tab = Window:MakeTab({
 	Name = "Anti stuff",
