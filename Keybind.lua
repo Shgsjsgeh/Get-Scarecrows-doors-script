@@ -22,6 +22,6 @@ TextLabel.TextScaled = true
 
 UIS.InputBegan:Connect(function(input)
     if input.KeyCode == Enum.KeyCode.S then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Shgsjsgeh/Get-Scarecrows-doors-script/refs/heads/main/Doors.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Shgsjsgeh/Get-Scarecrows-doors-script/refs/heads/main/Star%20jug%20by%20upio.lua"))()
     end
 end)
