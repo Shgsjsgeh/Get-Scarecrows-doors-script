@@ -9,5 +9,5 @@ while true do
         humanoid.WalkSpeed = humanoid.WalkSpeed + 30
     end
     
-    wait(1)
+    wait(0.1)
 end
