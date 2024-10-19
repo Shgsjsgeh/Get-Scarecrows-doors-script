@@ -2,6 +2,7 @@ local player = game.Players.LocalPlayer
 local character = player.Character or player.CharacterAdded:Wait()
 local humanoid = character:WaitForChild("Humanoid")
 local noclip = false
+local fullbrightEnabled = false
 
 local function toggleNoclip()
     noclip = not noclip
@@ -87,6 +88,20 @@ local function giveBTools()
     end
 end
 
+local function toggleFullbright()
+    fullbrightEnabled = not fullbrightEnabled
+    for _, light in pairs(workspace:GetDescendants()) do
+        if light:IsA("PointLight") or light:IsA("SpotLight") or light:IsA("SurfaceLight") then
+            light.Enabled = not fullbrightEnabled
+        end
+    end
+    if fullbrightEnabled then
+        game.Lighting.Brightness = 50 -- Set brightness to 50
+    else
+        game.Lighting.Brightness = 1 -- Default brightness level
+    end
+end
+
 local function onChatMessage(message)
     local lowerMessage = message:lower()
     if lowerMessage == ":noclip" then
@@ -111,6 +126,10 @@ local function onChatMessage(message)
         giveBTools()
     elseif lowerMessage == ":doge" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/notpoiu/Scripts/refs/heads/main/AutoAvoid-The-Strongest-Battlegrounds.lua"))()
+    elseif lowerMessage == ":fullbright" then
+        toggleFullbright()
+    elseif lowerMessage == ":speed" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Shgsjsgeh/Get-Scarecrows-doors-script/refs/heads/main/SpeedBypass.lua"))()
     end
 end
 
