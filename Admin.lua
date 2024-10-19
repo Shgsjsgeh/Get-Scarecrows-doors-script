@@ -96,9 +96,9 @@ local function toggleFullbright()
         end
     end
     if fullbrightEnabled then
-        game.Lighting.Brightness = 50 -- Set brightness to 50
+        game.Lighting.Brightness = 50 
     else
-        game.Lighting.Brightness = 1 -- Default brightness level
+        game.Lighting.Brightness = 1 
     end
 end
 
